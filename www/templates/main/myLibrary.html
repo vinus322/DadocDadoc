@@ -1,0 +1,42 @@
+<div class="bar bar-subheader">
+ <a class="button button-outline icon-right ion-navicon  button-stable " style="height:10px">전체선택</a>
+</div> 
+<ion-view view-title="myLibrary">
+  <ion-content>
+  
+</ion-slide>
+</ion-slide-box>
+</div><!--slidbox-->
+<div class="row" ng-repeat="rcmdbook in rcmdbooks track by $index" ng-if="$index % 2 == 0">
+ <div class="col col-50"
+  ng-repeat="i in [$index, $index + 1, $index + 2]" 
+  ng-if="rcmdbooks[i] != null" >
+	<div class="list card">
+  <div class="item item-divider">
+    <h3>{{rcmdbooks[i].name}}</h3>
+    <p>{{rcmdbooks[i].date | date}}</p>
+  </div><!--item item-divider-->
+  <div class="item item-body" >
+    <a href="#/app/main/{{rcmdbooks[i].id}}"><img class="full-image" src="{{rcmdbooks[i].bookimg}}" ></a>
+   </div><!--item item-body-->
+  <div class="item tabs tabs-secondary tabs-icon-left">
+    <a class="tab-item" href="#">
+      <i class="icon ion-thumbsup"></i>
+      Like
+    </a>
+    <a class="tab-item" ng-click="showPopup()">
+      <i class="icon ion-chatbox"></i>
+      Comment
+    </a>
+    <a class="tab-item" href="#">
+      <i class="icon ion-share"></i>
+      Share
+    </a>
+  </div><!--item tabs tabs-secondary-->
+</div><!--list card-->
+</div><!--col-->
+</div><!--row-->
+
+
+  </ion-content>
+</ion-view>

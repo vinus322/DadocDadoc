@@ -1,0 +1,71 @@
+<ion-view view-title="DetailBook">
+  <ion-content>
+  <div class="list card">
+        <div class="item item-divider">
+          <h4>도서정보</h4></div>
+        <div class="item item-image">
+          <div class="row">
+            <div class="col col-50">
+              <img src="{{rcmdbook.bookimg}}"><p class="rcmdScore" style="font-size: 1em; font-weight:bolder;">4</p></div>
+            <div class="col col-50" align="left">
+              <h2>{{rcmdbook.name}}</h2>
+              <p>작가</p>
+              <p>상세 설명</p>
+              <div class="stars" >
+                <form action="" >
+                  <input class="star star-5" id="star-5" type="radio" name="star"/>
+                  <label class="star star-5" for="star-5"></label>
+                  <input class="star star-4" id="star-4" type="radio" name="star"/>
+                  <label class="star star-4" for="star-4"></label>
+                  <input class="star star-3" id="star-3" type="radio" name="star"/>
+                  <label class="star star-3" for="star-3"></label>
+                  <input class="star star-2" id="star-2" type="radio" name="star"/>
+                  <label class="star star-2" for="star-2"></label>
+                  <input class="star star-1" id="star-1" type="radio" name="star"/>
+                  <label class="star star-1" for="star-1"></label>
+                </form>
+</div>
+      <div class="item tabs tabs-secondary tabs-icon-left" style="position: absolute; top: 70%; width: 45%">
+      <a class="tab-item"><i class="icon ion-thumbsup"></i>4</a>
+    <a class="tab-item">
+      <i class="icon ion-chatbox"></i>5</a>
+    <a class="tab-item"><i class="icon ion-share"></i>
+      Share</a>
+     </div></div></div></div>
+ </div>
+ <div class="list">
+<div class="list card">
+    <div class="item item-divider">
+   <h4>comment</h4></div>
+   <ion-scroll zooming="false" direction="y" style="width: 100%; height: 300px">
+    <a class="item item-avatar" href="#">
+      <img src="img/Mino.jpg">
+      <h2>Mino</h2>
+      <p>Back off, man. I'm a scientist.</p>
+    </a>
+ </ion-scroll>
+  <div class="item item-input-inset">
+    <label class="item-input-wrapper">
+      <input type="text" placeholder="comment">
+    </label>
+    <button class="button button-small">
+      Submit
+    </button>
+  </div>
+</div>
+
+</div>
+
+ <div class="list">
+<div class="list card">
+    <div class="item item-divider">
+   <h4>연관도서 추천</h4></div>
+  <ion-scroll zooming="false" direction="x" style="width: 200%; height: 200px">
+  <img src="{{rcmdbook.bookimg}}" style="width: 120px">
+  <img src="{{rcmdbook.bookimg}}" style="width: 120px">
+  <img src="{{rcmdbook.bookimg}}" style="width: 120px">
+  <img src="{{rcmdbook.bookimg}}" style="width: 120px">
+</div>
+</div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,32 @@
+<ion-view view-title="ConfirmEmail">
+  <ion-nav-bar class="bar-stable">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+
+  <ion-content>
+    <div class="card">
+       <div class="item item-text-wrap">
+        <p>아래 이메일로 인증하기</p>
+          <label class="item item-stacked-label" align = "center">
+            {{UserData.email}}
+          </label> 
+       <div class="row row-bottom">
+       <button class="button button-positive  button-clear col-33" ng-click="confirmPopup()">
+        인증하기
+      </button>
+      <div class = "col-33 "></div>
+      <button class="button button-positive  button-clear col-33" ng-click="EmailPopup()">
+        이메일수정
+      </button>
+    </div>
+</div>
+</div>
+
+ <center>
+   <button class="button button-small button-outline button-positive" onclick="location.href='#/selectInterest'">
+  Next >
+</button>
+ </center>
+  </ion-content>
+</ion-view>

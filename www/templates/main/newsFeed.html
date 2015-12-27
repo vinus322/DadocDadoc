@@ -1,0 +1,44 @@
+<div class="bar bar-subheader">
+ <a class="button button-outline icon-right ion-navicon  button-stable " style="height:10px">전체</a>
+ <a class="button button-outline icon-right  button-stable " style="height:10px"> <i class="icon ion-edit"></i>글쓰기</a>
+</div> 
+<ion-view view-title="newsFeed">
+  <ion-content>
+
+   <div class="list card"  ng-repeat="newsfeed in newsfeeds" href="#/app/newsFeed/{{newsfeed.id}}" >
+   <div class="item item-avatar"> 
+    <img src="{{newsfeed.face}}">
+    <h2>{{newsfeed.name}}</h2>
+    <p>{{newsfeed.date | date}}</p>
+  </div>
+  <div class="item item-body">
+  <a class="item item-thumbnail-left" href="#">
+      <img src="{{newsfeed.bookimg}}">
+      <h2>Pretty Hate Machine</h2>
+      <p>Nine Inch Nails</p>
+    </a>
+    <p>
+      {{newsfeed.myText}}
+    </p>
+    <p>
+      <a href="#" class="subdued">{{newsfeed.like}} Like</a>
+      <a href="#" class="subdued">{{newsfeed.comments}} Comments</a>
+    </p>
+  </div>
+  <div class="item tabs tabs-secondary tabs-icon-left">
+    <a class="tab-item" href="#">
+      <i class="icon ion-thumbsup"></i>
+      Like
+    </a>
+    <a class="tab-item" href="#">
+      <i class="icon ion-chatbox"></i>
+      Comment
+    </a>
+    <a class="tab-item" href="#">
+      <i class="icon ion-share"></i>
+      Share
+    </a>
+  </div>
+  </div>
+  </ion-content>
+</ion-view>

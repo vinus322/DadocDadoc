@@ -1,0 +1,68 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear button-positive  ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+        <ion-nav-buttons side="right">
+        <button class="button button-clear button-positive icon ion-search" onclick="location.href='#/app/search'"></button>
+       </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent" >
+
+    </ion-nav-view>
+    <ion-tabs class="tabs-striped tabs-icon-top tabs-positive ">
+      <a class="tab-item" href="#/app/main">
+        <i class="icon ion-star"></i>
+        추천 도서
+      </a>
+      <a class="tab-item" href="#/app/myLibrary">
+        <i class="icon ion-bookmark" ></i>
+        내서재
+      </a>
+      <a class="tab-item" href="#/app/newsFeed">
+        <i class="icon ion-clipboard"></i>
+        뉴스피드
+      </a>
+      <a class="tab-item" href="#/app/notifyPage">
+        <i class="icon ion-android-notifications"></i>
+        알림
+      </a>
+    </div>
+  </ion-side-menu-content>
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-stable">
+      <h1 class="title">menu</h1>
+
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+          <a class="item item-thumbnail-center" align="center" href="#/app/myPage">
+        <img src="img/Mino.jpg" height="180" width="150" style="-webkit-border-radius: 50%; -moz-border-radius:50%; border-radius: 50%;">
+        <h2>{{UserData.Name}}</h2>
+        <p>{{UserData.intro}}</p>
+      </a>
+        <div class="item item-divider">page</div>
+        <ion-item menu-close href="#/app/main">
+          Main
+        </ion-item>
+        <ion-item menu-close ng-click="login()">
+          Login
+        </ion-item>
+        <div class="item item-divider">List</div>
+        <ion-item menu-close href="#/app/search">
+          인기도서
+        </ion-item>
+        <ion-item menu-close href="#/app/test">
+          친구찾기/초대
+        </ion-item>
+        <ion-item menu-close href="#/app/setting">
+          설정
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
