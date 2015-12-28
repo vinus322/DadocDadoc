@@ -1,0 +1,33 @@
+<ion-view view-title="Email Authorization">
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-content>
+        <div class="card">
+            <div class="item item-text-wrap">
+                <p>아래 이메일로 인증하기</p>
+                <label class="item item-stacked-label" align="center">
+                    {{data.email}}
+                </label>
+                <div class="row row-bottom">
+                    <button class="button button-positive  button-clear col-33" ng-click="verifyEmail()">
+                        인증하기
+                    </button>
+                    <div class="col-33 "></div>
+                    <button class="button button-positive  button-clear col-33" ng-click="editEmail()">
+                        이메일수정
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <center>
+            <button class="button button-small button-outline button-positive"
+                    onclick="location.href='#/users/selectInterest'">
+                Next >
+            </button>
+        </center>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,47 @@
+<ion-view title="Sign Up">
+    <ion-content overflow-scroll="true" padding="true" scroll="false" class="has-header">
+        <form class="list">
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label">아이디</span>
+                    <input type="text" placeholder="" ng-model="data.user_id" required>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">비밀번호</span>
+                    <input type="password" placeholder="" ng-model="data.password" required>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">비밀번호 확인</span>
+                    <input type="password" placeholder="" ng-model="data.password_re" required>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">이름</span>
+                    <input type="text" placeholder="" ng-model="data.name" required>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">이메일</span>
+                    <input type="text" placeholder="" ng-model="data.email" required>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">생년월일</span>
+                    <input type="date" placeholder="" ng-model="data.birth" required>
+                </label>
+                <label class="item item-select">
+                    <span class="input-label">성별</span>
+                    <select ng-model="data.gender">
+                        <option value="0">성별 선택</option>
+                        <option value="1">남성</option>
+                        <option value="2">여성</option>
+                        <option value="3">중성</option>
+                        <option value="4">기타</option>
+                    </select>
+                </label>
+              <label class="item item-input">
+                <span class="input-label">휴대폰 번호</span>
+                <input type="text" placeholder="" ng-model="data.phone" required>
+              </label>
+            </ion-list>
+            <a ng-click="signup()" class="button button-dark button-block ">등록하기</a>
+        </form>
+    </ion-content>
+</ion-view>

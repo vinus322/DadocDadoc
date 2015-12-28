@@ -1,49 +1,49 @@
 <ion-view view-title="main">
-  <ion-content> 
-  <div class="slid-box">
- <ion-slide-box on-slide-changed="slideHasChanged($index)" style="width:100%; height: 200px" >
-  <ion-slide style="background-image:url('img/bg/bg2.png');">
-    <div align="center">
-      <h1>BLUE</h1>
-    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div>
-  </ion-slide>
-  <ion-slide style="background-image:url('img/bg/bg5.jpg');">
-    <div align="center"><h1>YELLOW</h1>
-    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div>
-  </ion-slide>
-  <ion-slide style="background-image:url('img/bg/bg4.jpg');">
-    <div align="center"><h1>PINK</h1></div>
-  </ion-slide>
-</ion-slide-box>
-</div><!--slidbox-->
-<div class="row" ng-repeat="rcmdbook in rcmdbooks track by $index" ng-if="$index % 2 == 0">
- <div class="col col-50"
-  ng-repeat="i in [$index, $index + 1, $index + 2]" 
-  ng-if="rcmdbooks[i] != null" >
-	<div class="list card">
-  <div class="item item-divider">
-    <h3>{{rcmdbooks[i].name}}</h3>
-    <p>{{rcmdbooks[i].date | date}}</p>
-  </div><!--item item-divider-->
-  <div class="item item-body" >
-    <a href="#/app/main/{{rcmdbooks[i].id}}"><img class="full-image" src="{{rcmdbooks[i].bookimg}}" ></a>
-   </div><!--item item-body-->
-  <div class="item tabs tabs-secondary tabs-icon-left">
-    <a class="tab-item" href="#">
-      <i class="icon ion-thumbsup"></i>
-      Like
-    </a>
-    <a class="tab-item" ng-click="showPopup()">
-      <i class="icon ion-chatbox"></i>
-      Comment
-    </a>
-    <a class="tab-item" href="#">
-      <i class="icon ion-share"></i>
-      Share
-    </a>
-  </div><!--item tabs tabs-secondary-->
-</div><!--list card-->
-</div><!--col-->
-</div><!--row-->
-  </ion-content>
+    <ion-content>
+        <div class="slid-box">
+            <ion-slide-box on-slide-changed="slideHasChanged($index)" style="width:100%; height: 200px">
+                <ion-slide style="background-image:url('img/bg/bg2.png');">
+                    <div align="center">
+                        <h1>BLUE</h1>
+                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
+                            gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div>
+                </ion-slide>
+                <ion-slide style="background-image:url('img/bg/bg5.jpg');">
+                    <div align="center"><h1>YELLOW</h1>
+                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
+                            gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div>
+                </ion-slide>
+                <ion-slide style="background-image:url('img/bg/bg4.jpg');">
+                    <div align="center"><h1>PINK</h1></div>
+                </ion-slide>
+            </ion-slide-box>
+        </div><!--slidbox-->
+        <div class="row" ng-repeat="rcmdbook in rcmdbooks track by $index" ng-if="$index % 2 == 0">
+            <div class="col col-50" ng-repeat="i in [$index, $index + 1, $index + 2]" ng-if="rcmdbooks[i] != null">
+                <div class="list card">
+                    <div class="item item-divider">
+                        <h3>{{rcmdbooks[i].name}}</h3>
+                        <p>{{rcmdbooks[i].date | date}}</p>
+                    </div><!--item item-divider-->
+                    <div class="item item-body">
+                        <a href="#/app/book/detailBook/{{rcmdbooks[i].id}}"><img class="full-image" src="{{rcmdbooks[i].bookimg}}"></a>
+                    </div><!--item item-body-->
+                    <div class="item tabs tabs-secondary tabs-icon-left">
+                        <a class="tab-item" href="#">
+                            <i class="icon ion-thumbsup"></i>
+                            Like
+                        </a>
+                        <a class="tab-item" ng-click="comment()">
+                            <i class="icon ion-chatbox"></i>
+                            Comment
+                        </a>
+                        <a class="tab-item" href="#">
+                            <i class="icon ion-share"></i>
+                            Share
+                        </a>
+                    </div><!--item tabs tabs-secondary-->
+                </div><!--list card-->
+            </div><!--col-->
+        </div><!--row-->
+    </ion-content>
 </ion-view>

@@ -1,0 +1,20 @@
+<ion-view title="Sign In">
+    <ion-content overflow-scroll="true" padding="true" scroll="false" class="has-header">
+        <form class="list">
+            <ion-list>
+                <label class="item item-input" name="user_id">
+                    <input type="text" placeholder="아이디를 입력해줭 >_<" ng-model="data.user_id" required>
+                </label>
+                <label class="item item-input" name="password">
+                    <input type="password" placeholder="비밀번호를 입력해줭 >_<" ng-model="data.password" required>
+                </label>
+            </ion-list>
+            <div class="spacer" style="height: 40px;"></div>
+            <a class="button button-dark button-block" ng-click="signin()">로그인</a>
+            <a class="button button-positive button-block" ng-click>Facebook 으로 로그인</a>
+        </form>
+        <div align="center">
+            <a href="#/confirmEmail">비밀번호 찾기</a>/<a href="#/users/signup">회원가입하기</a>
+        </div>
+    </ion-content>
+</ion-view>
