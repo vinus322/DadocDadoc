@@ -22,11 +22,11 @@
             <div class="col col-50" ng-repeat="i in [$index, $index + 1, $index + 2]" ng-if="rcmdbooks[i] != null">
                 <div class="list card">
                     <div class="item item-divider">
-                        <h3>{{rcmdbooks[i].name}}</h3>
+                        <h3>{{rcmdbooks[i].title}}</h3>
                         <p>{{rcmdbooks[i].date | date}}</p>
                     </div><!--item item-divider-->
                     <div class="item item-body">
-                        <a href="#/app/book/detailBook/{{rcmdbooks[i].id}}"><img class="full-image" src="{{rcmdbooks[i].bookimg}}"></a>
+                        <a href="#/app/book/bookInfo/{{rcmdbooks[i].idx}}"><img class="full-image" src="{{rcmdbooks[i].imgURL}}"></a>
                     </div><!--item item-body-->
                     <div class="item tabs tabs-secondary tabs-icon-left">
                         <a class="tab-item" href="#">

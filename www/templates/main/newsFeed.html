@@ -7,18 +7,18 @@
 
         <div class="list card"  ng-repeat="newsfeed in newsfeeds" href="#/app/main/newsFeed/{{newsfeed.id}}" >
             <div class="item item-avatar">
-                <img src="{{newsfeed.face}}">
-                <h2>{{newsfeed.name}}</h2>
-                <p>{{newsfeed.date | date}}</p>
+                <img src="img/userimg/undefine.png">
+                <h2>{{newsfeed.user_id}}</h2>
+                <p>{{newsfeed.name}}</p>
             </div>
             <div class="item item-body">
                 <a class="item item-thumbnail-left" href="#">
-                    <img src="{{newsfeed.bookimg}}">
-                    <h2>Pretty Hate Machine</h2>
-                    <p>Nine Inch Nails</p>
+                    <img src="{{newsfeed.imgURL}}">
+                    <h2>{{newsfeed.title}}</h2>
+                    <p>{{newsfeed.author}}</p>
                 </a>
                 <p>
-                    {{newsfeed.myText}}
+                  {{newsfeed.myText}}
                 </p>
                 <p>
                     <a href="#" class="subdued">{{newsfeed.like}} Like</a>

@@ -3,11 +3,38 @@
         <div class="bar bar-header item-input-inset">
             <label class="item-input-wrapper">
                 <i class="icon ion-ios-search placeholder-icon"></i>
-                <input type="search" placeholder="Search">
+                <input type="search" ng-model = "data.search" placeholder="Search">
             </label>
-            <button class="button button-clear">
-                Cancel
+            <button class="button button-clear" ng-click ="search()">
+                검색
             </button>
         </div>
+        <div class="row" ng-repeat="book in books track by $index" ng-if="$index % 2 == 0">
+            <div class="col col-50" ng-repeat="i in [$index, $index + 1, $index + 2]" ng-if="books[i] != null">
+                <div class="list card">
+                    <div class="item item-divider">
+                        <h3>{{books[i].title}}</h3>
+                        <p>{{books[i].date | date}}</p>
+                    </div><!--item item-divider-->
+                    <div class="item item-body">
+                        <a href="#/app/book/bookInfo/{{books[i].idx}}"><img class="full-image" src="{{books[i].imgURL}}"></a>
+                    </div><!--item item-body-->
+                    <div class="item tabs tabs-secondary tabs-icon-left">
+                        <a class="tab-item" href="#">
+                            <i class="icon ion-thumbsup"></i>
+                            Like
+                        </a>
+                        <a class="tab-item" ng-click="comment()">
+                            <i class="icon ion-chatbox"></i>
+                            Comment
+                        </a>
+                        <a class="tab-item" href="#">
+                            <i class="icon ion-share"></i>
+                            Share
+                        </a>
+                    </div><!--item tabs tabs-secondary-->
+                </div><!--list card-->
+            </div><!--col-->
+        </div><!--row-->
     </ion-content>
 </ion-view>

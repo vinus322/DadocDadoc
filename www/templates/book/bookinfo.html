@@ -1,0 +1,114 @@
+<ion-view view-title="BookInfo">
+
+
+    <ion-content>
+        <div class="list card">
+            <div class="item item-divider">
+                <h4>도서정보</h4></div>
+            <div class="item item-image">
+                <div class="row">
+                    <div class="col col-50">
+                        <img src="{{bookInfo.imgURL}}"><p class="rcmdScore" style="font-size: 1em; font-weight:bolder;">★{{ bookInfo.avg }}</p>
+                    </div>
+                    <div class="col col-50" align="left">
+                        <h2>{{bookInfo.title}}</h2>
+                        <p>작가 :{{bookInfo.author}}</p>
+                        <p>출판사 : {{bookInfo.publisher}}</p>
+                        <p>출판년도 : {{bookInfo.date}}</p>
+                        <a   href="#/app/book/detailBook/{{bookInfo.idx}}" style="font-size: 15px ; position: absolute; top: 50%; right: 20px;">상세보기 ></a>
+                        <div class="stars" >
+                            <form action="" >
+                                <input class="star star-5" id="star-5" type="radio" name="star" ng-model="star.value" value ="5"  />
+                                <label class="star star-5" for="star-5" ></label>
+                                <input class="star star-4" id="star-4" type="radio" name="star" ng-model="star.value" value = "4" />
+                                <label class="star star-4" for="star-4"></label>
+                                <input class="star star-3" id="star-3" type="radio" name="star" ng-model="star.value" value = "3" />
+                                <label class="star star-3" for="star-3"></label>
+                                <input class="star star-2" id="star-2" type="radio" name="star" ng-model="star.value" value = "2" />
+                                <label class="star star-2" for="star-2"></label>
+                                <input class="star star-1" id="star-1" type="radio" name="star" ng-model="star.value" value = "1" />
+                                <label class="star star-1" for="star-1"></label>
+                            </form>
+                   
+                        </div>
+                        <button class="button button-small" ng-click="submitStar()" style="font-size: 10px ; position: absolute; top: 60%; right: 20px;">
+                           별점주기
+                        </button>
+
+                        <div class="item tabs tabs-secondary tabs-icon-left" style="position: absolute; top: 70%; width: 45%">
+                            <a class="tab-item"><i class="icon ion-thumbsup"></i>4</a>
+                            <a class="tab-item">
+                                <i class="icon ion-chatbox"></i>5</a>
+                            <a ng-click="addlibrary()" class="tab-item"><i class="icon ion-share"></i>
+                                도서담기</a>
+                        </div></div></div></div>
+
+                    </div>
+
+            <div class="list card">
+                <div class="item item-divider">
+                    <h4>도서구매사이트</h4></div>
+                <ion-scroll zooming="false" direction="y" style="width: 100%; height: 100px">
+                 <div class="row" >
+                    <div class="col col-50">
+                        <a class="row" href="{{bookInfo.bookURL}}">
+                        <img  class = "col col-50" src="img/publisher/yes24.png" style="width : 40%; height : 10%" />
+                        <p>yes24<br> {{bookInfo.price}}</p>
+                        </a>
+
+                     </div>
+                     <div class="col col-50">
+                        <div class="row">
+                        <img  class = "col col-50" src="img/publisher/알라딘.png" style="width : 40%; height : 10%"/>
+                         <p>알라딘<br> 12000원</p>
+                        </div>
+                     </div>
+                </div>
+            </div>
+
+            <div class="list card">
+                <div class="item item-divider">
+                    <h4>comment</h4></div>
+                <ion-scroll zooming="false" direction="y" style="width: 100%; height: 300px">
+                    <a class="item item-avatar"  ng-repeat =" cmt in comments" href="#">
+                        <img src="img/Mino.jpg">
+                        <h2>{{cmt.user_id}}</h2>
+                        <p>{{cmt.c_comment}}</p>
+                    </a>
+
+                </ion-scroll>
+                <div class="item item-input-inset">
+                    <label class="item-input-wrapper">
+                        <input ng-model="data.comment">
+                    </label>
+                    <button class="button button-small" ng-click="sendComment()">
+                        Submit
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="list card">
+                <div class="item item-divider">
+                    <button ng-click = "test()" ><h4>tegCloud</h4></button></div>
+                    <div id="htmltagCloud" align="center"><span ng-repeat=" teg in tagCloud" id="{{teg.id}}" class="tagCloude">
+                        <a herf="#" style="">{{ teg.title }}</a></span>
+                    </div>
+
+            </div>
+            <div class="list card">
+                <div class="item item-divider">
+                    <h4>연관도서 추천</h4></div>
+                <ion-scroll zooming="false" direction="x" style="width: 200%; height: 200px">
+               <div class="row">
+                <div ng-repeat=" book in bookList" style=" padding : 10px" >
+                    <a href="#/app/book/bookInfo/{{book.idx}}">
+                    <img src="{{book.imgURL}}" style=" width: 120px ;height: 150px">
+                    <p style="font-size : 8px">{{book.title}}</p></a>
+                </div>
+            </div>
+            </div>
+            <div style=" height : 20px" ></div>
+
+    </ion-content>
+</ion-view>

@@ -22,6 +22,10 @@ angular.module('app.routes', [])
                 controller: 'menuCtrl'
             })
 
+            /*
+             * 회원가입 로그인관련
+             */
+
             .state('signin', {
                 url: '/users/signin',
                 templateUrl: 'templates/users/signin.html',
@@ -58,8 +62,15 @@ angular.module('app.routes', [])
             .state('neighbor', {
                 url: '/users/neighbor',
                 templateUrl: 'templates/users/neighbor.html',
-                controller: 'neighborCtrl'
+                controller: 'neighborCtrl',
+       
+              
             })
+
+
+            /*
+             * 메인
+             */
 
             .state('app.main', {
                 url: '/main/main',
@@ -76,7 +87,7 @@ angular.module('app.routes', [])
                 views: {
                     menuContent: {
                         templateUrl: 'templates/main/myLibrary.html',
-                        controller: 'mainCtrl'
+                        controller: 'myLibraryCtrl'
                     }
                 }
             })
@@ -121,16 +132,6 @@ angular.module('app.routes', [])
                 }
             })
 
-            .state('app.detailBook', {
-                url: '/book/detailBook/:rcmdBookId',
-                views: {
-                    menuContent: {
-                        templateUrl: 'templates/book/detailBook.html',
-                        controller: 'detailBookCtrl'
-                    }
-                }
-            })
-
             .state('app.notifyPage', {
                 url: '/main/notifyPage',
                 views: {
@@ -150,6 +151,51 @@ angular.module('app.routes', [])
                     }
                 }
             })
+
+             .state('app.neighbor', {
+                url: '/main/neighbor',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/main/neighbor.html',
+                        controller :'neighborCtrl'
+                    }
+                }
+            })
+
+            /*
+             * 도서정보
+             */
+             .state('app.bookInfo', {
+                url: '/book/bookInfo/:rcmdBookId',
+                views: {
+                    menuContent: {
+                        templateUrl: 'templates/book/bookInfo.html',
+                        controller: 'bookInfoCtrl'
+                    }
+                }
+            })
+
+             .state('app.detailBook', {
+                url: '/book/detailBook/:BookId',
+                views: {
+                    menuContent: {
+                        templateUrl: 'templates/book/detailBook.html',
+                        controller: 'detailBookCtrl'
+                    }
+                }
+            })
+
+            .state('app.test', {
+                url: '/main/test',
+                views: {
+                    menuContent: {
+                        templateUrl: 'templates/main/test.html',
+                        controller: 'testCtrl'
+                    }
+                }
+            })
+
+
 
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/users/signin');

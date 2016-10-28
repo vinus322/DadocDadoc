@@ -1,0 +1,27 @@
+<ion-view view-title="이웃보기/추가">
+    <ion-content>
+        <div class="item item-divider">
+             내이웃
+        </div>
+        <div class="list" ng-repeat ="neighbor in myNeighbor">
+        <a class="item item-thumbnail-left" href="#">
+           <img src="img/userimg/undefine.png">
+          <h2>{{neighbor.user_id}}</h2>
+          <p>{{neighbor.name}}/{{neighbor.email}}</p>
+          <button ng-click="#">삭제하기</button>
+        </a>
+        </div>
+
+        <div class="item item-divider">
+             추천이웃
+        </div>
+        <div class="list" ng-repeat ="rcm in rcmNeighbor" >
+        <a class="item item-thumbnail-left" >
+          <img src="img/userimg/undefine.png">
+          <h2>{{rcm.user_id}}</h2>
+          <p>{{rcm.name}}/{{rcm.email}}</p>
+          <button ng-click="addneighbor(rcm.user_id)">추가하기</button>
+        </a>
+        </div>
+    </ion-content>
+</ion-view>

@@ -5,39 +5,13 @@
     </ion-nav-bar>
     <ion-content>
         <ion-list>
-            <div class="row">
-                <div class="col col-50 ">
-                    <ion-checkbox  ng-model="data[0]"><div class="item item-avatar" ><img src="img/interest/1.png" /></div>IT/인터넷</ion-checkbox>
-                </div>
-                <div class="col col-50">
-                    <ion-checkbox  ng-model="data[1]"><div class="item item-avatar"><img src="img/interest/1.png" /></div>자기계발</ion-checkbox>
-                </div>
+          <div class="row" ng-repeat="interest in interests track by $index" ng-if="$index % 2 == 0">
+            <div class="col col-50" ng-repeat="i in [$index, $index + 1, $index + 2]" ng-if="interests[i] != null">
+                <ion-checkbox ng-model="interests[i].check"><div class="item item-avatar" ><img src="{{interests[i].imgURL}}" /></div>{{interests[i].name}}</ion-checkbox>
             </div>
-            <div class="row">
-                <div class="col col-50">
-                    <ion-checkbox ng-model="data[2]"><div class="item item-avatar"><img src="img/interest/1.png" /></div>경제경영</ion-checkbox>
-                </div>
-                <div class="col col-50">
-                    <ion-checkbox ng-model="data[3]" ><div class="item item-avatar "><img src="img/interest/1.png" /></div>교육/키즈</ion-checkbox>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col col-50">
-                    <ion-checkbox ng-model="data[4]"><div class="item item-avatar"><img src="img/interest/1.png" /></div>과학기술</ion-checkbox>
-                </div>
-                <div class="col col-50">
-                    <ion-checkbox ng-model="data[5]" ><div class="item item-avatar "><img src="img/interest/1.png" /></div>인문/사회</ion-checkbox>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col col-50">
-                    <ion-checkbox ng-model="data[6]" ><div class="item item-avatar"><img src="img/interest/1.png" /></div>문학</ion-checkbox>
-                </div>
-                <div class="col col-50">
-                    <ion-checkbox ng-model="data[7]" ><div class="item item-avatar "><img src="img/interest/1.png" /></div>취미</ion-checkbox>
-                </div>
-            </div>
-            <button class="button button-block button-calm" ng-disabled="JoinFrom.$invalid" onclick="location.href='#/users/neighbor'">선택완료</button>
+        </div>
+          <button class="button button-block button-calm"  ng-click="selectOK()">선택완료</button>
+  
         </ion-list>
     </ion-content>
 </ion-view>

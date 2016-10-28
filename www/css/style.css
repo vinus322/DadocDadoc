@@ -105,6 +105,10 @@ box-shadow: none;
  right: 5px;
 }
 
+
+/*
+ 별점 css
+*/
 div.stars {
   position: absolute;
   top: 60%;
@@ -114,8 +118,8 @@ div.stars {
 input.star { display: none; }
 label.star {
   float: right;
-  padding: 5px;
-  font-size: 16px;
+  padding: 2px;
+  font-size: 15px;
   color: #444;
 }
 input.star:checked ~ label.star:before {
@@ -130,3 +134,82 @@ label.star:before {
   font-family: FontAwesome;
 }
 
+.wrd {
+    padding: 0;
+    position: relative;
+}
+
+#htmltagcloud {
+    line-height: 2.4em;
+    word-spacing: normal;
+    letter-spacing: normal;
+    text-transform: none;
+    text-align: justify;
+    text-indent: 0;
+    font-size: 100%;
+    width: auto;
+    font-family: 'lucida grande','trebuchet ms',arial,helvetica,sans-serif;
+    background-color: #fff;
+    margin: 1em 1em 0 1em;
+    border: 2px dotted #ddd;
+    padding: 2em;
+}
+
+
+/*
+ bookimg 관련 css
+*/
+div.bookimg {
+
+    margin: 5px;
+    display: block;
+    margin-left: 30%;
+    margin-right: auto;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.bookimg:hover {
+    border: 1px solid #777;
+}
+
+div.bookimg img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+
+
+/*button*/
+.plusbtn {
+  background: #40a6eb;
+  background-image: -webkit-linear-gradient(top, #40a6eb, #005ea6);
+  background-image: -moz-linear-gradient(top, #40a6eb, #005ea6);
+  background-image: -ms-linear-gradient(top, #40a6eb, #005ea6);
+  background-image: -o-linear-gradient(top, #40a6eb, #005ea6);
+  background-image: linear-gradient(to bottom, #40a6eb, #005ea6);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 34px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.plusbtn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
